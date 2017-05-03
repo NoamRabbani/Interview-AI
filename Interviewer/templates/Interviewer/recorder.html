@@ -5,10 +5,6 @@
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Audio Recorder</title>
-
-	<script src="{% static "Interviewer/javascript/audiodisplay.js" %}"></script>
-	<script src="{% static "Interviewer/javascript/recorder.js" %}"></script>
-	<script src="{% static "Interviewer/javascript/main.js" %}"></script>
 	<style>
 	html { overflow: hidden; }
 	body {
@@ -70,5 +66,16 @@
 		<img id="record" src="{% static "Interviewer/media/mic.png" %}" onclick="toggleRecording(this);">
 		<a id="save" href="#"><img src="{% static "Interviewer/media/save.svg" %}"></a>
 	</div>
+
+	<form id ="form" action="/analyzeSpeech" enctype="multipart/form-data" method="post">
+			{% csrf_token %}
+			<input type="text" id="user_speech_blob" name="user_speech_blob" value="#" width="50">
+			<input type="submit" id="button_analyze_speech" value="Submit">
+	</form>
+
+	<script src="{% static "Interviewer/javascript/audiodisplay.js" %}"></script>
+	<script src="{% static "Interviewer/javascript/recorder.js" %}"></script>
+	<script src="{% static "Interviewer/javascript/main.js" %}"></script>
+
 </body>
 </html>

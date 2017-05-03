@@ -24,6 +24,7 @@ var rafID = null;
 var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
+var user_speech_blob = document.getElementById('user_speech_blob');
 
 /* TODO:
 
@@ -48,6 +49,13 @@ function gotBuffers( buffers ) {
 }
 
 function doneEncoding( blob ) {
+    var reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onload = function(event) {
+    user_speech_blob.setAttribute('value', reader.result);
+    console.log(reader.result)
+    };
+
     Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
     recIndex++;
 }
