@@ -69,7 +69,7 @@
 
 	<form id ="form" action="/analyzeSpeech" enctype="multipart/form-data" method="post">
 			{% csrf_token %}
-			<input type="text" id="user_speech_blob" name="user_speech_blob" value="#" width="50">
+			<input type="text" id="user_speech_b64code" name="user_speech_b64code" value="#" width="50">
 			<input type="submit" id="button_analyze_speech" value="Submit">
 	</form>
 

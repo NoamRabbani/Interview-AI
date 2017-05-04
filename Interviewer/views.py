@@ -14,13 +14,10 @@ def recorderWorker(request):
 
 def analyzeSpeech(request):
     try:
-        user_speech_blob = request.POST['user_speech_blob']
+        user_speech_b64code = request.POST['user_speech_b64code']
     except:
         raise Http404
 
-    print(user_speech_blob)
+    textFromSpeech = speechToText.speech_to_text(user_speech_b64code)
 
-    result = speechToText.speech_to_text(user_speech_blob)
-    print (result)
-
-    return HttpResponse("http response")
+    return HttpResponse(textFromSpeech)

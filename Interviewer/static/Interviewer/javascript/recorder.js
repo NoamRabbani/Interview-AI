@@ -109,6 +109,16 @@ DEALINGS IN THE SOFTWARE.
   Recorder.setupDownload = function(blob, filename){
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
     var link = document.getElementById("save");
+    var user_speech_b64code = document.getElementById('user_speech_b64code');
+
+    var reader = new window.FileReader();
+    reader.readAsDataURL(blob);
+    reader.onloadend = function() {
+                   base64data = reader.result;
+                   user_speech_b64code.setAttribute('value',  base64data.substr(base64data.indexOf(',')+1));
+                   console.log(base64data );
+     }
+
     link.href = url;
     link.download = filename || 'output.wav';
   }

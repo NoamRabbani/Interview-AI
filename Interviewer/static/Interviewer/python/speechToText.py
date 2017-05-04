@@ -1,15 +1,11 @@
 from watson_developer_cloud import SpeechToTextV1
 import json, base64
 
-from Interviewer.static.Interviewer.python import base64decode
-
-def speech_to_text(base64encode):
+def speech_to_text(b64code):
 
 	stt = SpeechToTextV1(username="5ff4851b-de60-45c5-9fdb-e0d7d9b866c2", password="3siYdkUyzVoj")
 
-	# audio_file = open(filename,"rb")
-
-	audio_file = base64decode.base64ToWav(base64encode)
+	audio_file = base64.b64decode(b64code)
 
 	result = json.dumps(stt.recognize(audio_file, content_type="audio/wav",model="en-UK_NarrowbandModel",continuous="true",timestamps="true",word_confidence="True",keywords=["completion","this"],keywords_threshold="0.1"), indent=2)
 
