@@ -7,7 +7,7 @@ def speech_to_text(b64code):
 
 	audio_file = base64.b64decode(b64code)
 
-	result = json.dumps(stt.recognize(audio_file, content_type="audio/wav",model="en-UK_NarrowbandModel",continuous="true",timestamps="true",word_confidence="True",keywords=["completion","this"],keywords_threshold="0.1"), indent=2)
+	result = json.dumps(stt.recognize(audio_file, content_type="audio/wav",continuous="true",timestamps="true",word_confidence="True",model="en-UK_NarrowbandModel"), indent=2)
 
 	# print result
 	wjdata = json.loads(result)
