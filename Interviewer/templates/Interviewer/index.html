@@ -1,29 +1,41 @@
 {% load static %}
 
+<!doctype html>
 <html>
-  <head>
-    <title>Sample "Hello, World" Application</title>
-  </head>
-  <body bgcolor=white>
+    <head>
+        <title>Interview AI</title>
+        <link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/bootstrap.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/style.css" %}">
+        <script type="text/javascript" src="{% static "Interviewer/style/js/jquery.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "Interviewer/style/js/bootstrap.min.js" %}"></script>
+    </head>
 
-    <table border="0" cellpadding="10">
-      <tr>
-        <td>
-          <img src="{% static "Interviewer/media/mic.png" %}">
-        </td>
-        <td>
-          <a href="submit">submit<a/>
-          <h1>Sample "Hello, World" Application</h1>
-        </td>
-      </tr>
-    </table>
+    <body>
+        <h2>Interview AI</h2>
 
-    <p>This is the home page for the HelloWorld Web application. </p>
-    <p>To prove that they work, you can execute either of the following links:
-    <ul>
-      <li>To a <a href="hello.jsp">JSP page</a>.
-      <li>To a <a href="hello">servlet</a>.
-    </ul>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="carousel-caption">
+                        <p>Some cool sliding text</p>
+                    </div>
+                </div>
 
-  </body>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <p>I don't know what to put here</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <p>It is sliding</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg">Start Interview</button>
+    </body>
+
 </html>
