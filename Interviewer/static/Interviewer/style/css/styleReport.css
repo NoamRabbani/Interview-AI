@@ -3,12 +3,30 @@ html, body{
 	height:100%;
 	margin:0;
 	padding:0;
-	background: white url("../../media/backgroundRecorder.jpeg") no-repeat;
+	background: white url("../../media/backgroundRecorder.jpg");
 	background-size:cover;
 }
 
+.container-fluid{
+  height:100%;
+  width: 100%;
+  padding: 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
 .transBg {
-	height: 100vh;
+	height: 200vh;
 	background: rgba(0, 167, 221, 0.70);
+	background-size: 
+}
+
+.jumbotron {
+	font-size: 20px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.clear {
+	clear: both;
 }

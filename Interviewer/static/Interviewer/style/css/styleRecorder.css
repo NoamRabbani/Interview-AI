@@ -2,7 +2,7 @@ html, body{
 	height:100%;
 	margin:0;
 	padding:0;
-	background: white url("../../media/backgroundRecorder.jpeg") no-repeat;
+	background: white url("../../media/backgroundRecorder.jpg") no-repeat;
 	background-size:cover;
 	font-size: 30px;
 }
