@@ -20,4 +20,4 @@ def analyzeSpeech(request):
 
     textFromSpeech = speechToText.speech_to_text(user_speech_b64code)
 
-    return HttpResponse(textFromSpeech)
+    return render(request, 'Interviewer/analyzeSpeech.html')

@@ -4,10 +4,12 @@
 <html>
     <head>
         <title>Interview AI</title>
+
         <link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/bootstrap.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/style.css" %}">
-        <script type="text/javascript" src="{% static "Interviewer/style/js/jquery.min.js" %}"></script>
-        <script type="text/javascript" src="{% static "Interviewer/style/js/bootstrap.min.js" %}"></script>
+      	<script type="text/javascript" src="{% static "Interviewer/style/js/jquery.min.js" %}"></script>
+      	<script type="text/javascript" src="{% static "Interviewer/style/js/bootstrap.min.js" %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/styleIndex.css" %}">
+
     </head>
 
     <body>
@@ -35,7 +37,13 @@
             </div>
         </div>
 
-        <button class="btn btn-primary btn-lg">Start Interview</button>
+
+
+        <form id ="form" action="/recorder" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Start Interview" class="btn btn-primary btn-lg">
+        </form>
+
     </body>
 
 </html>

@@ -1,0 +1,18 @@
+body {
+    background: white url("../../media/backgroundRecorder.jpeg") no-repeat;
+    background-size:cover
+}
+
+canvas {
+  display: inline-block;
+  background: #ffffff;
+  width: 80%;
+  height: 45%;
+  box-shadow: 0px 0px 10px blue;
+  border-radius: 25px;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
