@@ -101,6 +101,7 @@ def speech_to_text(b64code):
 	print (average_velocity)
 	create_pic(temp_str)
 	create_emo(temp_str)
+	word_could(temp_str)
 	result = {'speech_str': temp_str, 'average_velocity': average_velocity}
 
 	return result
