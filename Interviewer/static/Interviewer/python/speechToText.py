@@ -3,6 +3,9 @@ import json, base64
 from nltk.tokenize import word_tokenize
 import re
 import matplotlib.pyplot as plt
+from watson_developer_cloud import NaturalLanguageUnderstandingV1
+import watson_developer_cloud.natural_language_understanding.features.v1 as \
+    features
 ##removes non non-alphanumeric characters based on re
 def re_nalpha(str):
 	pattern = re.compile(r'[^\w\s]', re.U)
@@ -43,7 +46,26 @@ def create_pic(input_text):
 	plt.savefig('Interviewer/static/Interviewer/userMedia/freq.png')
 	plt.close()
 
+def create_emo(input_text):
+	natural_language_understanding = NaturalLanguageUnderstandingV1(
+		version='2017-02-27',
+		username='6a28fa30-2bd7-4981-9037-09e3e8a3a691',
+		password='ZtUrPvaSmxKL')
 
+	response = natural_language_understanding.analyze(
+		text=input_text,
+		features=[features.Emotion()])
+	result=json.loads(json.dumps(response, indent=2))
+	print(result)
+	emo_rate=result["emotion"]["document"]["emotion"]
+	labels = ['sadness', 'joy', 'fear', 'disgust','anger']
+	sizes = [emo_rate['sadness'], emo_rate['joy'], emo_rate['fear'], emo_rate['disgust'],emo_rate['anger']]
+	colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral','black']
+	patches, texts = plt.pie(sizes, colors=colors, shadow=True, startangle=90)
+	plt.legend(patches, labels, loc="best")
+	plt.tight_layout()
+	plt.savefig('Interviewer/static/Interviewer/userMedia/emo.png')
+	plt.close()
 
 def speech_to_text(b64code):
 
@@ -65,7 +87,7 @@ def speech_to_text(b64code):
 	average_velocity = (timestamps[-1][2]-timestamps[0][1])/len(timestamps)
 	print (average_velocity)
 	create_pic(temp_str)
-
+	create_emo(temp_str)
 	result = {'speech_str': temp_str, 'average_velocity': average_velocity}
 
 	return result
