@@ -7,43 +7,36 @@
 
         <link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/bootstrap.css" %}">
       	<script type="text/javascript" src="{% static "Interviewer/style/js/jquery.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "Interviewer/style/js/jquery.vticker.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "Interviewer/style/js/indexScript.js" %}"></script>
       	<script type="text/javascript" src="{% static "Interviewer/style/js/bootstrap.min.js" %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/styleIndex.css" %}">
 
     </head>
 
     <body>
-        <h2>Interview AI</h2>
+        <div class="transBg">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="centering text-center">
+                        <h2>Interview AI</h2>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="carousel-caption">
-                        <p>Some cool sliding text</p>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="carousel-caption">
-                        <p>I don't know what to put here</p>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="carousel-caption">
-                        <p>It is sliding</p>
+                        <div id="myCarousel">
+                            <ul>
+                                <li class="carouselText">Some cool sliding text</li>
+                                <li class="carouselText">I don't know what to put here</li>
+                                <li class="carouselText">It is sliding</li>
+                            </ul>
+                        </div>
+                        
+                        <form id ="form" action="/recorder" enctype="multipart/form-data" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Start Interview" class="btn btn-primary btn-lg">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-        <form id ="form" action="/recorder" enctype="multipart/form-data" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Start Interview" class="btn btn-primary btn-lg">
-        </form>
-
     </body>
 
 </html>
