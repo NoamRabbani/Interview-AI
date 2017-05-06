@@ -1,7 +1,14 @@
-body {
-	background: rgba(0, 167, 221, 0.70);
+   
+html, body{
+	height:100%;
+	margin:0;
+	padding:0;
+	background: white url("../../media/backgroundRecorder.jpeg") no-repeat;
+	background-size:cover;
 }
 
-.carousel-caption{
-    position:static;
+
+.transBg {
+	height: 100vh;
+	background: rgba(0, 167, 221, 0.70);
 }

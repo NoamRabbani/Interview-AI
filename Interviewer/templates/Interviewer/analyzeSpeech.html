@@ -2,22 +2,23 @@
 
 <!doctype html>
 <html>
-    <head>
-        <title>Interview AI</title>
+<head>
+	<title>Interview AI</title>
 
-        <link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/bootstrap.css" %}">
-      	<script type="text/javascript" src="{% static "Interviewer/style/js/jquery.min.js" %}"></script>
-      	<script type="text/javascript" src="{% static "Interviewer/style/js/bootstrap.min.js" %}"></script>
-        <link rel="stylesheet" type="txext/css" href="{% static "Interviewer/style/css/styleReport.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/bootstrap.css" %}">
+	<script type="text/javascript" src="{% static "Interviewer/style/js/jquery.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "Interviewer/style/js/bootstrap.min.js" %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/styleReport.css" %}">
 
-    </head>
+</head>
 
-    <body>
-<img src="{% static "Interviewer/userMedia/freq.png" %}", alt="wordFreqGraph">
-      HELLO WORLD
+<body>
+	<div class="transBg">
+		<img src="{% static "Interviewer/userMedia/freq.png" %}", alt="wordFreqGraph">
+		HELLO WORLD
 
-      {{average_velocity}}
-
-    </body>
+		{{average_velocity}}
+	</div>
+</body>
 
 </html>
