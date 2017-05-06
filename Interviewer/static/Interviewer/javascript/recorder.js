@@ -116,7 +116,6 @@ DEALINGS IN THE SOFTWARE.
     reader.onloadend = function() {
                    base64data = reader.result;
                    user_speech_b64code.setAttribute('value',  base64data.substr(base64data.indexOf(',')+1));
-                   console.log(base64data );
      }
 
     link.href = url;

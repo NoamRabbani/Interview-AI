@@ -29,10 +29,7 @@
                             </ul>
                         </div>
                         
-                        <form id ="form" action="/recorder" enctype="multipart/form-data" method="post">
-                            {% csrf_token %}
-                            <input type="submit" value="Start Interview" class="btn btn-primary btn-lg">
-                        </form>
+                        <a href="/recorder"><button class="btn btn-default btn-lg">Start Interview</button></a>
                     </div>
                 </div>
             </div>
