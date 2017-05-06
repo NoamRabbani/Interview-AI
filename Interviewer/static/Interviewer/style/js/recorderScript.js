@@ -18,6 +18,8 @@ function initVars() {
 function toggleRecord() {
 	if (togRec) {
 		recText.innerHTML = "Stop";
+		recText.style.color="rgba(0, 167, 225, 1)";
+		recSpan.style.color="red";
 		recSpan.classList.add('glyphicon');
 		recSpan.classList.add('glyphicon-record');
 		recSpan.classList.add('blink');
@@ -26,7 +28,9 @@ function toggleRecord() {
 		togSub = false;
 	}
 	else {
+		btRec.classList.add('btn');
 		recText.innerHTML = "Record";
+		recText.style.color="rgba(0, 167, 225, 1)";
 		recSpan.classList.remove('glyphicon');
 		recSpan.classList.remove('glyphicon-record');
 		recSpan.classList.remove('blink');

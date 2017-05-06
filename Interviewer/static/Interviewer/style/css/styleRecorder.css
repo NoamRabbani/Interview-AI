@@ -16,7 +16,7 @@ p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 35px; font-wei
 	border-radius: 30px;
 	padding-top: 45px;
 	padding-bottom: 45px; 
-	color: #404040;
+	color: rgba(0, 167, 225, 1);
 	font-weight: 900;
 	font-size: 35px;
 }
@@ -25,7 +25,7 @@ p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 35px; font-wei
 	margin-top: 25px;
 	padding-left: 35px;
 	padding-right: 35px; 
-	color: #404040;
+	color: rgba(0, 167, 225, 1);
 	font-weight: 900;
 	font-size: 30px;
 }
@@ -55,12 +55,6 @@ canvas {
   margin-top: 8%;
 }
 
-h1 {
-	color: #000000;
-	margin-left: 20px;
-	margin-top: 8%;
-	margin-bottom: 8%;
-}
 
 span:before{
 	content:" ";
