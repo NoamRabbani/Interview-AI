@@ -31,7 +31,7 @@
 					<input type="hidden" id="user_speech_b64code" name="user_speech_b64code" value="#" width="50">
 
 					<span><button type="button" id="btnRecord" class="btn btn-default btn-lg" onclick="toggleRecording(this)"><span id="recText">Record</span></button></span>
-					<span><input type="submit" class="btn btn-default btn-lg" id="button_analyze_speech" value="Submit"></span>
+					<span><input type="submit" class="btn btn-default btn-lg disabled" id="button_analyze_speech" value="Submit"></span>
 
 				</form>
 
@@ -43,14 +43,15 @@
 					<canvas id="wavedisplay" width="1024" height="150" style="display: none;" ></canvas>
 				</div>
 
-				<script src="{% static "Interviewer/javascript/audiodisplay.js" %}"></script>
-				<script src="{% static "Interviewer/javascript/recorder.js" %}"></script>
-				<script src="{% static "Interviewer/javascript/main.js" %}"></script>
 
 			</div>
 		</div>
 	</div>
 	</div>
+
+	<script src="{% static "Interviewer/javascript/audiodisplay.js" %}"></script>
+	<script src="{% static "Interviewer/javascript/recorder.js" %}"></script>
+	<script src="{% static "Interviewer/javascript/main.js" %}"></script>
 
 </body>
 </html>
