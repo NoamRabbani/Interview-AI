@@ -65,7 +65,10 @@ def speech_to_text(b64code):
 	average_velocity = (timestamps[-1][2]-timestamps[0][1])/len(timestamps)
 	print (average_velocity)
 	create_pic(temp_str)
-	return temp_str
+
+	result = {'speech_str': temp_str, 'average_velocity': average_velocity}
+
+	return result
 
 # print speech_to_text("clinton_200003_genome.wav")
 

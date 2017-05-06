@@ -18,6 +18,13 @@ def analyzeSpeech(request):
     except:
         raise Http404
 
-    textFromSpeech = speechToText.speech_to_text(user_speech_b64code)
+    dataFromSpeech = speechToText.speech_to_text(user_speech_b64code)
 
-    return render(request, 'Interviewer/analyzeSpeech.html')
+    average_velocity = dataFromSpeech['average_velocity']
+    print(average_velocity)
+
+    context = {
+        "average_velocity": average_velocity,
+    }
+
+    return render(request, 'Interviewer/analyzeSpeech.html' , context)
