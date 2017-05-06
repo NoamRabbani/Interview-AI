@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from watson_developer_cloud import NaturalLanguageUnderstandingV1
 import watson_developer_cloud.natural_language_understanding.features.v1 as \
     features
+from wordcloud import WordCloud
 ##removes non non-alphanumeric characters based on re
 def re_nalpha(str):
 	pattern = re.compile(r'[^\w\s]', re.U)
@@ -66,6 +67,18 @@ def create_emo(input_text):
 	plt.tight_layout()
 	plt.savefig('Interviewer/static/Interviewer/userMedia/emo.png')
 	plt.close()
+def word_could(text):
+# Generate a word cloud image
+	wordcloud = WordCloud().generate(text)
+	wordcloud = WordCloud(max_font_size=40).generate(text)
+	plt.figure()
+	plt.imshow(wordcloud, interpolation="bilinear")
+	plt.axis("off")
+	plt.savefig('Interviewer/static/Interviewer/userMedia/wordcloud.png')
+	plt.close()
+
+
+
 
 def speech_to_text(b64code):
 
