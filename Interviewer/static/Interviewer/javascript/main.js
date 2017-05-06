@@ -25,7 +25,6 @@ var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
 
-
 /* TODO:
 
 - offer mono option
@@ -60,6 +59,7 @@ function toggleRecording( e ) {
         audioRecorder.stop();
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
+
     } else {
         // start recording
         if (!audioRecorder)

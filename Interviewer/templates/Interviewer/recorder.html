@@ -8,6 +8,7 @@
 	<title>Audio Recorder</title>
 
 	<link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/bootstrap.css" %}">
+
 	<script type="text/javascript" src="{% static "Interviewer/style/js/jquery.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "Interviewer/style/js/bootstrap.min.js" %}"></script>
 	<link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/styleRecorder.css" %}">
@@ -16,21 +17,38 @@
 
 <body>
 
-	<form id ="form" action="/analyzeSpeech" enctype="multipart/form-data" method="post">
-			{% csrf_token %}
-			<input type="hidden" id="user_speech_b64code" name="user_speech_b64code" value="#" width="50">
-			<input type="submit" class="btn btn-primary btn-lg" id="button_analyze_speech" value="Submit">
-	</form>
+	<div class="outer">
+  <div class="middle">
+  <div class="inner">
 
-	<button type="button" class="btn btn-primary btn-lg" onclick="toggleRecording(this);">Record</button>
+		<div id="viz">
+			<canvas id="question" width="1024" height="150" ></canvas>
+		</div>
 
-	<div id="viz">
-		<canvas id="wavedisplay" width="1024" height="150" ></canvas>
+		<form id ="form" action="/analyzeSpeech" enctype="multipart/form-data" method="post">
+				{% csrf_token %}
+				<input type="hidden" id="user_speech_b64code" name="user_speech_b64code" value="#" width="50">
+
+				<span><button type="button" class="btn btn-primary btn-lg" onclick="toggleRecording(this);">Record</button></span>
+				<span><input type="submit" class="btn btn-primary btn-lg" id="button_analyze_speech" value="Submit"></span>
+
+		</form>
+
+		<div class="socket">
+	    <div class="button"></div>
+	  </div>
+
+		<div id="viz">
+			<canvas id="wavedisplay" width="1024" height="150" ></canvas>
+		</div>
+
+		<script src="{% static "Interviewer/javascript/audiodisplay.js" %}"></script>
+		<script src="{% static "Interviewer/javascript/recorder.js" %}"></script>
+		<script src="{% static "Interviewer/javascript/main.js" %}"></script>
+
 	</div>
-
-	<script src="{% static "Interviewer/javascript/audiodisplay.js" %}"></script>
-	<script src="{% static "Interviewer/javascript/recorder.js" %}"></script>
-	<script src="{% static "Interviewer/javascript/main.js" %}"></script>
+	</div>
+	</div>
 
 </body>
 </html>
