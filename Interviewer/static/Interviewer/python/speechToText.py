@@ -60,10 +60,11 @@ def speech_to_text(b64code):
 	for subs in wjdata["results"]:
 		# print "transcript"
 		temp_str+=subs["alternatives"][0]["transcript"]
-	create_pic(temp_str)
-
 	print(temp_str)
-
+	timestamps = subs["alternatives"][0]["timestamps"]
+	average_velocity = (timestamps[-1][2]-timestamps[0][1])/len(timestamps)
+	print (average_velocity)
+	create_pic(temp_str)
 	return temp_str
 
 # print speech_to_text("clinton_200003_genome.wav")
