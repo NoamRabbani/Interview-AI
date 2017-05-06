@@ -1,7 +1,62 @@
-body {
-	background: rgba(0, 167, 221, 0.70);
+   
+html, body{
+	height:100%;
+	margin:0;
+	padding:0;
+	background: white url("../../media/backgroundRecorder.jpeg") no-repeat;
+	background-size:cover;
 }
 
-.carousel-caption{
-    position:static;
+
+.transBg {
+	height: 100vh;
+	background: rgba(0, 167, 221, 0.70);
 }
+ 
+.container-fluid{
+  height:100%;
+  display:table;
+  width: 100%;
+  padding: 0;
+}
+ 
+.row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
+
+.centering {
+  float:none;
+  margin:0 auto;
+}
+
+
+
+h2 {
+	font-size: 46px;
+	font-weight: 400;
+	color: #fff;
+}
+
+.carouselText {
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+}
+
+#myCarousel { 
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+#myCarousel ul {
+	list-style: none;
+	position: relative;
+	float: left;
+	display: block;
+	left: 50%;
+}
+#myCarousel ul li {
+	position: relative;
+	float: none;
+	display: block;
+	right: 50%;
+}
+
