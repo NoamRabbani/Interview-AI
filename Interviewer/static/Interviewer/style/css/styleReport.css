@@ -1,4 +1,4 @@
-   
+
 html, body{
 	height:100%;
 	margin:0;
@@ -16,9 +16,8 @@ html, body{
 }
 
 .transBg {
-	height: 200vh;
+	height: 400vh;
 	background: rgba(0, 167, 221, 0.70);
-	background-size: 
 }
 
 .jumbotron {

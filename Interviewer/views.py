@@ -12,6 +12,9 @@ def recorder(request):
 def recorderWorker(request):
     return render(request, 'Interviewer/recorderWorker.js')
 
+def webcamWorker(request):
+    return render(request, 'Interviewer/webcamWorker.js')
+
 def analyzeSpeech(request):
     try:
         user_speech_b64code = request.POST['user_speech_b64code']

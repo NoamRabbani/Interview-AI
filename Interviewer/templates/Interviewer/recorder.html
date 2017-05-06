@@ -5,44 +5,52 @@
 
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Interview-AI</title>
+	<title id="page_title" value="recorder">Interview-AI</title>
 
 	<link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/bootstrap.css" %}">
 	<script type="text/javascript" src="{% static "Interviewer/style/js/jquery.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "Interviewer/style/js/bootstrap.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "Interviewer/style/js/recorderScript.js" %}"></script>
 	<link rel="stylesheet" type="text/css" href="{% static "Interviewer/style/css/styleRecorder.css" %}">
+	<script src="webcamWorker.js"></script>
 
 </head>
 
 <body>
 
 	<div class="transBg">
-	<div class="outer">
-		<div class="middle">
-			<div class="inner">
+		<div class="outer">
+			<div class="middle">
+				<div class="inner">
 
-				<div class="well well-lg">
-					What are your three greatest strengths?
+					<div class="well well-lg">
+						What are your three greatest strengths?
+					</div>
+
+					<video id="video">Video stream not available.</video>
+
+					<form id ="form" action="/analyzeSpeech" enctype="multipart/form-data" method="post">
+						{% csrf_token %}
+						<input type="hidden" id="user_speech_b64code" name="user_speech_b64code" value="#" width="50">
+
+						<span><button type="button" id="btnRecord" class="btn btn-default btn-lg" onclick="toggleRecording(this)"><span id="recText">Record</span></button></span>
+						<span><input type="submit" class="btn btn-default btn-lg disabled" id="button_analyze_speech" value="Submit"></span>
+
+						<!--  webcam snap  -->
+						<canvas id="canvas" hidden></canvas>
+						<input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50" hidden>
+					</form>
+
+
+					<button id="capture_baseline" hidden></button>
+
+					<div id="viz" hidden="hidden">
+						<canvas id="wavedisplay" width="1024" height="150" style="display: none;" ></canvas>
+					</div>
+
 				</div>
-
-				<form id ="form" action="/analyzeSpeech" enctype="multipart/form-data" method="post">
-					{% csrf_token %}
-					<input type="hidden" id="user_speech_b64code" name="user_speech_b64code" value="#" width="50">
-
-					<span><button type="button" id="btnRecord" class="btn btn-default btn-lg" onclick="toggleRecording(this)"><span id="recText">Record</span></button></span>
-					<span><input type="submit" class="btn btn-default btn-lg disabled" id="button_analyze_speech" value="Submit"></span>
-
-				</form>
-
-				<div id="viz" hidden="hidden">
-					<canvas id="wavedisplay" width="1024" height="150" style="display: none;" ></canvas>
-				</div>
-
-
 			</div>
 		</div>
-	</div>
 	</div>
 
 	<script src="{% static "Interviewer/javascript/audiodisplay.js" %}"></script>

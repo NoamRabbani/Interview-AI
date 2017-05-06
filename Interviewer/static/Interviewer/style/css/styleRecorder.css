@@ -15,7 +15,7 @@ p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 35px; font-wei
 .well {
 	border-radius: 30px;
 	padding-top: 45px;
-	padding-bottom: 45px; 
+	padding-bottom: 45px;
 	color: rgba(0, 167, 225, 1);
 	font-weight: 900;
 	font-size: 35px;
@@ -24,7 +24,7 @@ p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 35px; font-wei
 .btn {
 	margin-top: 25px;
 	padding-left: 35px;
-	padding-right: 35px; 
+	padding-right: 35px;
 	color: rgba(0, 167, 225, 1);
 	font-weight: 900;
 	font-size: 30px;
@@ -35,7 +35,11 @@ p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 35px; font-wei
 
 
 #form {
-	margin-top: 80px;
+	margin-top: 20px;
+}
+
+#video {
+	margin-top: 40px;
 }
 
 .transBg {

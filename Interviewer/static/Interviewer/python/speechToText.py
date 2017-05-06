@@ -97,8 +97,8 @@ def speech_to_text(b64code):
 		temp_str+=subs["alternatives"][0]["transcript"]
 	print(temp_str)
 	timestamps = subs["alternatives"][0]["timestamps"]
-	average_velocity = (timestamps[-1][2]-timestamps[0][1])/len(timestamps)
-	print (average_velocity)
+	average_velocity = round(60/((timestamps[-1][2]-timestamps[0][1])/len(timestamps)))
+	print(average_velocity)
 	create_pic(temp_str)
 	create_emo(temp_str)
 	word_could(temp_str)

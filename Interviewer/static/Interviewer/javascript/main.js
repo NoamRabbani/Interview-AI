@@ -69,6 +69,7 @@ function toggleRecording( e ) {
         audioRecorder.clear();
         audioRecorder.record();
     }
+    setTimeout(function(){ document.getElementById('capture_baseline').click();},(3*1000));
 }
 
 function convertToMono( input ) {
@@ -187,3 +188,9 @@ function initAudio() {
 }
 
 window.addEventListener('load', initAudio );
+
+$('#post-form').on('submit', function(event){
+    event.preventDefault();
+    console.log("form submitted!")  // sanity check
+    alert("form submitted")
+});
