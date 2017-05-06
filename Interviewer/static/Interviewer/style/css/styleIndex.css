@@ -7,6 +7,28 @@ html, body{
 	background-size:cover;
 }
 
+h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+
+
+h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 80px; font-weight: 800; line-height: 40px; margin: 0 0 44px; text-align: center; }
+
+
+p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 35px; font-weight: 500; line-height: 50px; margin: 0 0 24px; }
+
+
+.btn {
+	margin-top: 25px;
+	padding-left: 35px;
+	padding-right: 35px; 
+	color: rgba(0, 167, 221, 1);
+	font-weight: 900;
+	font-size: 30px;
+}
+.btn:hover {
+	color: rgba(0, 167, 250, 1);
+}
+
+
 
 .transBg {
 	height: 100vh;
@@ -29,22 +51,20 @@ html, body{
 
 
 
-h2 {
+/*h2 {
 	font-size: 46px;
 	font-weight: 400;
 	color: #fff;
-}
+}*/
 
 .carouselText {
-	font-size: 30px;
-	color: #fff;
 	text-align: center;
 }
 
 #myCarousel { 
 	width: 100%;
 	overflow: hidden;
-	padding-bottom: 10px;
+	padding-bottom: 9px;
 }
 #myCarousel ul {
 	list-style: none;

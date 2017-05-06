@@ -7,6 +7,36 @@ html, body{
 	font-size: 30px;
 }
 
+h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 80px; font-weight: 800; line-height: 40px; margin: 0 0 44px; text-align: center; }
+
+
+p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 35px; font-weight: 500; line-height: 50px; margin: 0 0 24px; }
+
+.well {
+	border-radius: 30px;
+	padding-top: 45px;
+	padding-bottom: 45px; 
+	color: #404040;
+	font-weight: 900;
+	font-size: 35px;
+}
+
+.btn {
+	margin-top: 25px;
+	padding-left: 35px;
+	padding-right: 35px; 
+	color: #404040;
+	font-weight: 900;
+	font-size: 30px;
+}
+.btn:hover {
+	color: rgba(0, 167, 250, 1);
+}
+
+
+#form {
+	margin-top: 80px;
+}
 
 .transBg {
 	height: 100vh;
