@@ -35,11 +35,16 @@ def analyzeSpeech(request):
     filename = 'user_photo.png'
     with open(filename, 'wb') as f:
         f.write(imgdata)
-    print(speechToText.pic_anly())
+    appearance_str = speechToText.pic_anly()
+    filename = 'Interviewer/static/Interviewer/userMedia/user_photo.png'
+    with open(filename, 'wb') as f:
+        f.write(imgdata)
+    appearance_str = speechToText.pic_anly()
 
     context = {
         "average_velocity": average_velocity,
         "speech_speed": speech_speed,
+        "appearance_str": appearance_str,
     }
 
     return render(request, 'Interviewer/analyzeSpeech.html' , context)

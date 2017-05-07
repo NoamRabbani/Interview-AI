@@ -91,26 +91,26 @@ def create_speed(avg_velocity):
 
 def pic_anly():
     p = subprocess.Popen('curl -X POST "https://v1-api.visioncloudapi.com/face/detection?api_id=5a0f0ffc899a4db88241a0e7bd4ed306&api_secret=f66a525a98e54c3e97bb1d6ee9d6d4c7&attributes=true" \
-      -F file=@user_photo.png', stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd='C:\\Users\\rabbani\\PycharmProjects\\Interview-AI')
+      -F file=@user_photo.png', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, error = p.communicate()
     result=json.loads(out.decode("utf-8"))
     desc = ''
     if(len(result['faces'])==1):
         att=result['faces'][0]['attributes']
         emo=result['faces'][0]['emotions']
-        desc+="Description for the appearance" + '\n'
-        desc+="age: "+str(att['age'])+'\n'
+        desc+="Description for the appearance" + ' : '
+        desc+="Age: "+str(att['age'])+' - '
         d_smile='No'
         if(att['smile']==1):
             d_smile='yes'
-        desc+="smile: "+d_smile+'\n'
+        desc+="Smile: "+d_smile+' - '
         gender = att['gender']
         d_gender=''
         if(gender>50):
             d_gender='Male'
         else:
             d_gender='Female'
-        desc+="Gender: " + d_gender + '\n'
+        desc+="Gender: " + d_gender + ' - '
 
         glass = att['eyeglass']
         d_glass = ''
@@ -119,8 +119,8 @@ def pic_anly():
             d_glass="with glass"
         else:
             d_glass="without glass"
-        desc+="Eyeglass: " + d_glass + '\n'
-        desc+="\nDescription for the emotion:" + '\n'
+        desc+="Eyeglass: " + d_glass + ' '
+        desc+="Emotions:"
         d_emo=''
         emo_list = ["angry","calm","confused","disgust","happy","sad","scared","surprised","screaming"]
         for sub_emo in emo_list:
