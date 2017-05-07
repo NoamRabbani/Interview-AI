@@ -77,8 +77,16 @@ def word_could(text):
 	plt.savefig('Interviewer/static/Interviewer/userMedia/wordcloud.png')
 	plt.close()
 
-
-
+def create_speed(avg_velocity):
+	y = []
+	y.append(avg_velocity)
+	y.append(145)
+	x_list = ['Your speed', 'Ideal Speed']
+	x = range(len(y))
+	plt.bar(x, y, width=0.5)
+	plt.xticks((x),x_list)
+	plt.savefig('Interviewer/static/Interviewer/userMedia/speed.png')
+	plt.close()
 
 def speech_to_text(b64code):
 
@@ -92,30 +100,27 @@ def speech_to_text(b64code):
 	wjdata = json.loads(result)
 
 	temp_str = ''
+	speech_speed = ''
 	for subs in wjdata["results"]:
 		# print "transcript"
 		temp_str+=subs["alternatives"][0]["transcript"]
 	print(temp_str)
 	timestamps = subs["alternatives"][0]["timestamps"]
 	average_velocity = round(60/((timestamps[-1][2]-timestamps[0][1])/len(timestamps)))
+
+	if average_velocity<110:
+		speech_speed = 'Your speaking rate is slow. You should increase your speaking speed.'
+	else:
+		if average_velocity>170:
+			speech_speed = 'Your speaking rate is fast. You should decrease your speaking speed.'
+		else:
+			speech_speed = 'You are speaking at the correct rate.'
+
+
 	print(average_velocity)
 	create_pic(temp_str)
 	create_emo(temp_str)
 	word_could(temp_str)
-	result = {'speech_str': temp_str, 'average_velocity': average_velocity}
-
+	create_speed(average_velocity);
+	result = {'speech_str': temp_str, 'average_velocity': average_velocity, 'speech_speed': speech_speed }
 	return result
-
-# print speech_to_text("clinton_200003_genome.wav")
-
-
-
-	# print "timestamps"
-	# print subs["alternatives"][0]["timestamps"]
-	# print "confidence"
-	# print subs["alternatives"][0]["confidence"]
-	# print "word_confidence"
-	# print subs["alternatives"][0]["word_confidence"]
-	# print "keywords_result"
-	# print subs["keywords_result"]
-# https://www.ibm.com/watson/developercloud/doc/speech-to-text/input.html#models can select model

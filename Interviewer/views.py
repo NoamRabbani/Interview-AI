@@ -24,10 +24,12 @@ def analyzeSpeech(request):
     dataFromSpeech = speechToText.speech_to_text(user_speech_b64code)
 
     average_velocity = dataFromSpeech['average_velocity']
+    speech_speed = dataFromSpeech['speech_speed']
     print(average_velocity)
 
     context = {
         "average_velocity": average_velocity,
+        "speech_speed": speech_speed,
     }
 
     return render(request, 'Interviewer/analyzeSpeech.html' , context)

@@ -17,14 +17,26 @@
 
 		<div class="container-fluid">
 
-			<div  class="jumbotron">You are speaking at the speed of {{average_velocity}} words per minute.
-			</div>
+		<div class="jumbotron"><h1>REPORT</h1></div>
 
 			<div class="row">
 				
 				<div  class="jumbotron col-md-12">
 					<div class="col-md-6">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan metus ut tellus vestibulum, et finibus risus aliquam. Morbi ex augue, finibus nec nulla egestas, fringilla posuere purus. Duis sem quam, malesuada in fringilla eu, suscipit efficitur diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at lacus sodales, sagittis leo vel, ultricies urna. Fusce feugiat ut enim vitae ullamcorper. Quisque auctor faucibus augue, eget maximus lectus feugiat sit amet. Aliquam at ligula ac arcu lacinia scelerisque. Suspendisse posuere elementum nibh vel efficitur. Etiam elementum arcu sem, sit amet tristique quam porttitor at. Integer rhoncus ornare tortor, in varius diam pellentesque sit amet. Aenean rhoncus lorem velit, efficitur sollicitudin dui ullamcorper sit amet. Proin pulvinar, tortor sit amet cursus bibendum, sapien mi scelerisque urna, eget iaculis ante elit congue tortor. Nulla vel eleifend lacus, in auctor odio. Curabitur ut scelerisque justo, a posuere diam.
+						<h2>Speech rate</h2>
+						<p>You are speaking at the speed of {{average_velocity}} words per minute. The ideal rate for speaking at an interview is between 110 and 170. {{speech_speed}}</p>
+					</div>
+					<div class="col-md-6">
+						<img src="{% static "Interviewer/userMedia/speed.png" %}", alt="speedGraph">
+					</div>
+				</div>
+
+			<div class="row">
+				
+				<div  class="jumbotron col-md-12">
+					<div class="col-md-6">
+						<h2>Most used words</h2>
+						<p>Here are your most used words. This is an unfiltered result, meaning that even small filler words are shown on the graph. </p>
 					</div>
 					<div class="col-md-6">
 						<img src="{% static "Interviewer/userMedia/freq.png" %}", alt="wordFreqGraph">
@@ -35,7 +47,10 @@
 			<div class="row">
 
 				<div  class="jumbotron col-md-12">
-					<div class="col-md-6">Some other text</div>
+					<div class="col-md-6">
+						<h2>Emotional Analysis</h2>
+						<p>Emotional distribution of your speech. The words you used were analysed and an emotional spectrum was generated.</p>
+					</div>
 					<div class="col-md-6 ">
 						<img src="{% static "Interviewer/userMedia/emo.png" %}", alt="wordFreqGraph">
 					</div>
@@ -45,7 +60,10 @@
 			<div class="row">
 
 				<div  class="jumbotron col-md-12">
-					<div class="col-md-6">Some other text</div>
+					<div class="col-md-6">
+						<h2>Word Cloud</h2>
+						<p>Your most relevant concepts. Here you can see keywords that were characteristic of your interview.</p>
+					</div>
 					<div class="col-md-6 ">
 						<img src="{% static "Interviewer/userMedia/wordcloud.png" %}", alt="wordFreqGraph">
 					</div>
