@@ -2,7 +2,7 @@
 
 Interview AI was the project for hackathon HACKxSJTU held at Shanghai Jiao Tong University on 5th-7th May 2017. It won the third prize in the competition. 
 
-![Alt text](InterviewAI_landing.png?raw=true)
+![Alt text](InterviewAI_landing.PNG?raw=true)
 
 Interview-AI is a web application which helps you practice for interview. It asks you an interview question and you have to answer that question. Based on what you said and expressions on your face, it gives you a report containing the following:
 
