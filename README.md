@@ -1,6 +1,6 @@
 # Interview-AI
 
-Interview AI was our project submission for the HACKxSJTU hackathon held at Shanghai Jiao Tong University on 5th-7th May 2017. It won third place on the podium!
+Interview AI was our project submission for the HACKxSJTU hackathon held at Shanghai Jiao Tong University in May 2017. It won third place on the podium!
 
 ![Alt text](InterviewAI_landing.PNG?raw=true)
 
